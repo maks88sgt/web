@@ -3,8 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .form-container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        .form-input {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #user-name-input, #user-type-input, #password-input, #submit-input {
+            width: 350px;
+            height: 25px;
+            padding: 20px;
+            margin: 20px;
+            border: 10px solid black;
+        }
+        label {
+            margin: 40px;
+        }
+
+        input[type=submit] {
+            background-color: turquoise;
+        }
+        input[type=submit]:hover {
+            background-color: darkcyan;
+           cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-<div>Lorem</div>
+<div class="form-container">
+    <h1>Registration form</h1>
+    <form>
+        <div class="form-input" style="display:block;">
+            <label for="user-name-input">Enter your name</label>
+            <input id="user-name-input" type="text" placeholder="Name">
+        </div>
+        <div class="form-input">
+            <label for="password-input">Enter your password</label>
+            <input id="password-input" type="password" placeholder="Password">
+        </div>
+        <div class="form-input">
+            <label for="user-type-input">Select your role</label>
+            <select id="user-type-input">
+                <option value="0">Admin</option>
+                <option value="1">Moderator</option>
+                <option value="2">User</option>
+            </select>
+        </div>
+        <input id="submit-input" type="submit" value="Submit">
+    </form>
+</div>
 </body>
 </html>
