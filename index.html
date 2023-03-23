@@ -30,8 +30,6 @@
             width: 350px;
             height: 25px;
             padding: 20px;
-            margin: 20px;
-            border: 10px solid black;
         }
         label {
             margin: 40px;
@@ -44,13 +42,19 @@
             background-color: darkcyan;
            cursor: pointer;
         }
+        .input-error{
+            border-color: red;
+        }
+        .error-message {
+            color: red;
+        }
     </style>
 </head>
 <body>
 <div class="form-container">
     <h1>Registration form</h1>
-    <form>
-        <div class="form-input" style="display:block;">
+    <form action="http://localhost:8080" method="post">
+        <div class="form-input" id="name-input-container">
             <label for="user-name-input">Enter your name</label>
             <input id="user-name-input" type="text" placeholder="Name">
         </div>
@@ -66,8 +70,35 @@
                 <option value="2">User</option>
             </select>
         </div>
-        <input id="submit-input" type="submit" value="Submit">
+        <input type="submit">
     </form>
+
 </div>
+<script type="text/javascript">
+        const nameInput = document.querySelector("#user-name-input");
+
+        let inputValue;
+
+        nameInput.addEventListener("input", ()=> {
+            inputValue = nameInput.value
+            console.log(inputValue);
+        })
+
+        nameInput.addEventListener("blur", ()=> {
+            if (!inputValue || inputValue.length < 4) {
+                nameInput.className = "input-error"
+                const p = document.createElement("p");
+                p.append("Name field is required");
+                p.className = "error-message"
+                document.querySelector("#name-input-container").append(p);
+            }
+        })
+
+        nameInput.addEventListener("focus", ()=> {
+                document.querySelector("#name-input-container > .error-message").remove()
+        })
+
+
+</script>
 </body>
 </html>
