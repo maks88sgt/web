@@ -53,14 +53,14 @@
 <body>
 <div class="form-container">
     <h1>Registration form</h1>
-    <form action="http://localhost:8080" method="post">
+    <form action="/reg-data" method="post">
         <div class="form-input" id="name-input-container">
             <label for="user-name-input">Enter your name</label>
-            <input id="user-name-input" type="text" placeholder="Name">
+            <input id="user-name-input" type="text" placeholder="Name" name="username">
         </div>
         <div class="form-input">
             <label for="password-input">Enter your password</label>
-            <input id="password-input" type="password" placeholder="Password">
+            <input id="password-input" type="password" placeholder="Password" name="password">
         </div>
         <div class="form-input">
             <label for="user-type-input">Select your role</label>
