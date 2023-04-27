@@ -3,8 +3,21 @@ import { AsteroidCardContent } from "./AsteroidCardContent/AsteroidCardContent";
 import { AsteroidCardImage } from "./AsteroidCardImage/AsteroidCardImage";
 import styles from "./Card.module.css"
 
-export const AsteroidCard = (props) =>{
-    const {name, date,distance, size, isDangerous, distanceMode} = props
+type AsteroidCardProps = {
+    name: string;
+    date: string;
+    distance: {
+        kilometers: number;
+        lunar: number;
+    };
+    size: number;
+    isDangerous: boolean;
+    distanceMode: boolean;
+}
+
+
+export const AsteroidCard = (props: AsteroidCardProps) =>{
+    const {name, date, distance, distanceMode, size, isDangerous} = props
 
     return (<div className={styles.card}>
             <div className={isDangerous ? styles.cardRed : styles.regularCard}></div>

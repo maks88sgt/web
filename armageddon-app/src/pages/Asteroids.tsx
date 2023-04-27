@@ -50,7 +50,7 @@ export const Asteroids = () => {
 
     return <div>
         Home
-        <div className={styles.showDangerousOnly}><input type="checkbox" value={onlyDangerous}
+        <div className={styles.showDangerousOnly}><input type="checkbox" value={onlyDangerous as unknown as string}
                                                          onChange={() => setOnlyDangerous(!onlyDangerous)}
         ></input> Показать только опасные
         </div>
@@ -64,8 +64,8 @@ export const Asteroids = () => {
         <div style={{margin: "80px"}}>
         </div>
         {onlyDangerous ? asteroids.filter((it) => it.isDangerous).map((item) =>
-            <AsteroidCard key={item.id} {...item} distanceMode={distanceMode}/>) : asteroids.map((item) =>
-            <AsteroidCard key={item.id} {...item} distanceMode={distanceMode}/>)}
+            <AsteroidCard key={item.id}  {...item}/>) : asteroids.map((item) =>
+            <AsteroidCard key={item.id} {...item} />)}
     </div>
 }
 
