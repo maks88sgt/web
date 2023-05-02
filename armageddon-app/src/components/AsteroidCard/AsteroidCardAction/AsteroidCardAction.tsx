@@ -1,6 +1,6 @@
 import styles from "./Action.module.css"
 
-export const AsteroidCardAction = (props) =>{
+export const AsteroidCardAction = (props: {isDangerous: boolean}) =>{
 
     const {isDangerous} = props
 
