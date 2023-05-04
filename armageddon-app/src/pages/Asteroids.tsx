@@ -4,7 +4,17 @@ import {useEffect, useState} from "react";
 
 export const Asteroids = () => {
 
-    const [asteroids, setAsteroids] = useState([]);
+    const [asteroids, setAsteroids] = useState<{
+        name: string;
+        date: string;
+        distance: {
+            kilometers: number;
+            lunar: number;
+        },
+        size: number;
+        id: string;
+        isDangerous: boolean
+    }[]>([]);
 
     const [onlyDangerous, setOnlyDangerous] = useState(false);
 
@@ -12,17 +22,14 @@ export const Asteroids = () => {
 
     useEffect(() => {
         try {
-             const result = fetch("https://api.nasa.gov/neo/rest/v1/feed?api_key=DEMO_KEY").then((res) => {
+            const result = fetch("https://api.nasa.gov/neo/rest/v1/feed?api_key=DEMO_KEY").then((res) => {
                 return res.json()
             }).then((response) => {
                 let rawAsteroids = []
-                 console.log("response", response.near_earth_objects)
 
                 for (const data in response.near_earth_objects) {
                     rawAsteroids = rawAsteroids.concat(response.near_earth_objects[data])
                 }
-
-                console.log("raw asteroids", rawAsteroids)
 
                 const asteroids = rawAsteroids.map(item => {
                     const size = Math.trunc((item.estimated_diameter.meters.estimated_diameter_max + item.estimated_diameter.meters.estimated_diameter_min) / 2);
@@ -39,18 +46,16 @@ export const Asteroids = () => {
                 setAsteroids(asteroids)
             })
 
-        } catch(err) {
+        } catch (err) {
             console.log(err)
             setAsteroids(generateAsteroids())
         }
 
-        }, [])
-
-    console.log(asteroids)
+    }, [])
 
     return <div>
         Home
-        <div className={styles.showDangerousOnly}><input type="checkbox" value={onlyDangerous}
+        <div className={styles.showDangerousOnly}><input type="checkbox" value={onlyDangerous as unknown as string}
                                                          onChange={() => setOnlyDangerous(!onlyDangerous)}
         ></input> Показать только опасные
         </div>
