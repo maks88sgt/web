@@ -1,9 +1,9 @@
 import styles from "./Asteroids.module.css"
 import {AsteroidCard} from "../components/AsteroidCard/AsteroidCard";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
+import {AsteroidsContext} from "../components/asteroids-context/AsteroidsContext";
 
 export const Asteroids = () => {
-
     const [asteroids, setAsteroids] = useState<{
         name: string;
         date: string;
@@ -15,10 +15,6 @@ export const Asteroids = () => {
         id: string;
         isDangerous: boolean
     }[]>([]);
-
-    const [onlyDangerous, setOnlyDangerous] = useState(false);
-
-    const [distanceMode, setDistanceMode] = useState(false)
 
     useEffect(() => {
         try {
@@ -53,6 +49,8 @@ export const Asteroids = () => {
 
     }, [])
 
+    const {onlyDangerous, setOnlyDangerous, setDistanceMode} = useContext(AsteroidsContext)
+
     return <div>
         Home
         <div className={styles.showDangerousOnly}><input type="checkbox" value={onlyDangerous as unknown as string}
@@ -69,8 +67,8 @@ export const Asteroids = () => {
         <div style={{margin: "80px"}}>
         </div>
         {onlyDangerous ? asteroids.filter((it) => it.isDangerous).map((item) =>
-            <AsteroidCard key={item.id} {...item} distanceMode={distanceMode}/>) : asteroids.map((item) =>
-            <AsteroidCard key={item.id} {...item} distanceMode={distanceMode}/>)}
+            <AsteroidCard key={item.id} {...item} />) : asteroids.map((item) =>
+            <AsteroidCard key={item.id} {...item} />)}
     </div>
 }
 
