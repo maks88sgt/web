@@ -2,6 +2,7 @@ import styles from "./Asteroids.module.css"
 import {AsteroidCard} from "../components/AsteroidCard/AsteroidCard";
 import {useContext, useEffect, useState} from "react";
 import {AsteroidsContext} from "../components/asteroids-context/AsteroidsContext";
+import {Header} from "../components/header/Header";
 
 export const Asteroids = () => {
     const [asteroids, setAsteroids] = useState<{
@@ -52,7 +53,7 @@ export const Asteroids = () => {
     const {onlyDangerous, setOnlyDangerous, setDistanceMode} = useContext(AsteroidsContext)
 
     return <div>
-        Home
+        <Header/>
         <div className={styles.showDangerousOnly}><input type="checkbox" value={onlyDangerous as unknown as string}
                                                          onChange={() => setOnlyDangerous(!onlyDangerous)}
         ></input> Показать только опасные
@@ -65,10 +66,11 @@ export const Asteroids = () => {
                       className={styles.distanceChooser}> в
             дистанциях до луны</button></div>
         <div style={{margin: "80px"}}>
-        </div>
+        </div >
+        <div style={{display: "flex", gap: "25px", flexWrap: "wrap"}}>
         {onlyDangerous ? asteroids.filter((it) => it.isDangerous).map((item) =>
             <AsteroidCard key={item.id} {...item} />) : asteroids.map((item) =>
-            <AsteroidCard key={item.id} {...item} />)}
+            <AsteroidCard key={item.id} {...item} />)}</div>
     </div>
 }
 
