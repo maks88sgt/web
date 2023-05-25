@@ -1,11 +1,11 @@
-.card{
+.card {
 
     position: relative;
     width: 920px;
     height: 200px;
     left: 4px;
     top: 16px;
-    overflow:hidden;
+    overflow: hidden;
     /* Gradient Positive 2 */
 
     background: white;
@@ -17,7 +17,7 @@
     display: inline-block;
 }
 
-.regularCard{
+.regularCard {
     position: relative;
     width: 920px;
     height: 200px;
@@ -27,7 +27,7 @@
     background: linear-gradient(90deg, #CFF37D 0%, #7DE88C 100%);
 }
 
-.cardRed{
+.cardRed {
     position: relative;
     width: 920px;
     height: 200px;
@@ -37,15 +37,15 @@
     background: linear-gradient(90deg, #FFB199 0%, #FF0844 100%);
 }
 
-@media(max-width: 920px){
-    .card{
+@media (max-width: 920px) {
+    .card {
         position: relative;
         width: 288px;
         height: 391px;
         left: 4px;
         top: 16px;
 
-        overflow:hidden;
+        overflow: hidden;
         /* Black */
 
         border: 1px solid #000000;
@@ -55,7 +55,7 @@
     }
 
 
-    .adaptSolver{
+    .adaptSolver {
         position: absolute;
         width: 288px;
         height: 145px;
@@ -67,7 +67,7 @@
         background: linear-gradient(90deg, #CFF37D 0%, #7DE88C 100%);
     }
 
-    .cardRed{
+    .cardRed {
         background: linear-gradient(90deg, #FFB199 0%, #FF0844 100%);
     }
 }
