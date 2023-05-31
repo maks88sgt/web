@@ -24,7 +24,7 @@ jobs:
       - name: install dependencies
         run: cd ./armageddon-app/ && npm ci
       - name: build app
-        run: npm run build
+        run: cd ./armageddon-app/ && npm run build
         env:
           PUBLIC_URL: /web
       - name: upload artifact
