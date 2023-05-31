@@ -1,15 +1,15 @@
 import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Asteroids } from './pages/Asteroids';
 import { Destroyment } from './pages/Desroyment';
 import { Asteroid } from './pages/Asteroid';
 import {AsteroidsContextProvider} from "./components/asteroids-context/AsteroidsContext";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
-        path: '/asteroids',
+        path: '/',
         element: <Asteroids />,
     },
     {
@@ -26,7 +26,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <AsteroidsContextProvider>
-            <RouterProvider router={router} />
+            <RouterProvider router={router} basename={"/web"}/>
         </AsteroidsContextProvider>
     </React.StrictMode>
 );

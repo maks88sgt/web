@@ -10,14 +10,14 @@ export const Header = memo(({someFunc}:{someFunc?: (arg: any)=>void})=>{
     return (
         <div className={styles.container}>
             <div>
-                <h1>ARMAGGEDON V</h1>
+                <h1>With actions</h1>
                 <div>
                     Сервис мониторинга и уничтожения астероидов, опасно
                     подлетающих к Земле.
                 </div>
             </div>
             <div>
-                <Link to={'/asteroids'}>Астероиды</Link>
+                <Link to={'/'}>Астероиды</Link>
                 <Link to={'/destroyment'}>Уничтожение</Link>
             </div>
             <div>
