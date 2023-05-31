@@ -1,6 +1,6 @@
 import styles from "./Action.module.css"
 
-export const AsteroidCardAction = (props: {isDangerous: boolean, onClick: (asteroid: any)=>void}) =>{
+export const AsteroidCardAction = (props: {isDangerous: boolean, onClick: (asteroid: unknown)=>void}) =>{
 
     const {isDangerous, onClick} = props
 

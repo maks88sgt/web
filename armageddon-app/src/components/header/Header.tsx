@@ -3,7 +3,7 @@ import styles from  "./Header.module.css"
 import {getUserKey} from "../../utils/getUserKey";
 import {memo, useState} from "react";
 
-export const Header = memo(({someFunc}:{someFunc?: (arg: any)=>void})=>{
+export const Header = memo(()=>{
     const [inputOpened, setInputOpened] = useState(false)
 
 
@@ -24,7 +24,6 @@ export const Header = memo(({someFunc}:{someFunc?: (arg: any)=>void})=>{
                 {getUserKey() === 'DEMO_KEY' ? (
                     <button
                         onClick={() => {
-                            someFunc("123")
                             setInputOpened(!inputOpened);
                         }}
                     >
