@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 18.x
       - name: install dependencies
-        run: cd /armageddon-app/ & npm ci
+        run: cd ./armageddon-app/ && npm ci
       - name: build app
         run: npm run build
         env:
