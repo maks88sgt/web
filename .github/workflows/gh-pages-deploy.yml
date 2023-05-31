@@ -27,6 +27,7 @@ jobs:
         run: cd ./armageddon-app/ && npm run build
         env:
           PUBLIC_URL: /web
+          TSC_COMPILE_ON_ERROR: false
       - name: upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
