@@ -26,7 +26,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <AsteroidsContextProvider>
-            <RouterProvider router={router} basename={"/web"}/>
+            <RouterProvider router={router}/>
         </AsteroidsContextProvider>
     </React.StrictMode>
 );
