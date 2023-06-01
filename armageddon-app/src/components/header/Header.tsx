@@ -10,7 +10,7 @@ export const Header = memo(()=>{
     return (
         <div className={styles.container}>
             <div>
-                <h1>ARMAGGEDON V</h1>
+                <h1>TEST V</h1>
                 <div>
                     Сервис мониторинга и уничтожения астероидов, опасно
                     подлетающих к Земле.
