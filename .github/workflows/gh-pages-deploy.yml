@@ -4,7 +4,6 @@ on:
   push:
     branches: [ actions-deploy ]
 
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -32,7 +31,7 @@ jobs:
       - name: upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./armageddon-app/build
+          path: ./build
       - name: deploy to github pages
         id: deployment
         uses: actions/deploy-pages@v1
