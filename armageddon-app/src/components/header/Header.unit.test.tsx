@@ -4,12 +4,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { AsteroidsContextProvider } from "../asteroids-context/AsteroidsContext";
 
 describe('[components] Header', () => {
-    const mockFunction = jest.fn()
     beforeEach(() => {
         render(
           <AsteroidsContextProvider>
             <BrowserRouter>
-                <Header someFunc={mockFunction}/>
+                <Header/>
             </BrowserRouter>
           </AsteroidsContextProvider>
         );

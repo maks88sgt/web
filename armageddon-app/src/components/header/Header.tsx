@@ -3,14 +3,14 @@ import styles from  "./Header.module.css"
 import {getUserKey} from "../../utils/getUserKey";
 import {memo, useState} from "react";
 
-export const Header = memo(({someFunc}:{someFunc?: (arg: any)=>void})=>{
+export const Header = memo(()=>{
     const [inputOpened, setInputOpened] = useState(false)
 
 
     return (
         <div className={styles.container}>
             <div>
-                <h1>ARMAGGEDON V - test</h1>
+                <h1>ARMAGGEDON V</h1>
                 <div>
                     Сервис мониторинга и уничтожения астероидов, опасно
                     подлетающих к Земле.
@@ -24,7 +24,6 @@ export const Header = memo(({someFunc}:{someFunc?: (arg: any)=>void})=>{
                 {getUserKey() === 'DEMO_KEY' ? (
                     <button
                         onClick={() => {
-                            someFunc("123")
                             setInputOpened(!inputOpened);
                         }}
                     >

@@ -19,10 +19,6 @@ export const AsteroidsContextProvider: FC<AsteroidsContextProviderProps> = ({
         setDestroyment([...destroyment.filter(item=>item.id !== asteroid.id), asteroid])
     }
 
-    const deleteAsteroid = (asteroid) => {
-        setDestroyment([...destroyment.filter(item=>item.id !== asteroid.id)])
-    }
-
     return (
         <AsteroidsContext.Provider
             value={{
