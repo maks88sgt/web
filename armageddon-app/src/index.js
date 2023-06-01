@@ -7,7 +7,7 @@ import { Destroyment } from './pages/Desroyment';
 import { Asteroid } from './pages/Asteroid';
 import { AsteroidsContextProvider } from './components/asteroids-context/AsteroidsContext';
 
-console.log('>>>>>>>>>>>>>>>>>>>');
+console.log('>>>>>>>>>>>>>>>>>');
 const router = createHashRouter([
     {
         path: '/',
