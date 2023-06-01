@@ -5,8 +5,9 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Asteroids } from './pages/Asteroids';
 import { Destroyment } from './pages/Desroyment';
 import { Asteroid } from './pages/Asteroid';
-import {AsteroidsContextProvider} from "./components/asteroids-context/AsteroidsContext";
+import { AsteroidsContextProvider } from './components/asteroids-context/AsteroidsContext';
 
+console.log('>>>>>>>>>>>>>>>>>>>');
 const router = createHashRouter([
     {
         path: '/',
@@ -26,7 +27,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <AsteroidsContextProvider>
-            <RouterProvider router={router} basename={"/web"}/>
+            <RouterProvider router={router} basename={'/web'} />
         </AsteroidsContextProvider>
     </React.StrictMode>
 );
